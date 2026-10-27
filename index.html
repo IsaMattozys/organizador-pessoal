@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu Cantinho de Tarefas ♡</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main class="organizador">
+        <header class="cabecalho">
+            <span class="decoracao">୨୧</span>
+            <p class="subtitulo">um passinho de cada vez</p>
+            <h1>Meu cantinho ♡</h1>
+            <p class="descricao">
+                Organize seu dia com carinho!
+            </p>
+        </header>
+
+        <section class="resumo">
+            <div class="resumo-item">
+                <span>🌷</span>
+                <strong id="total-tarefas">0</strong>
+                <small>Tarefas</small>
+            </div>
+
+            <div class="resumo-item">
+                <span>💗</span>
+                <strong id="total-pendentes">0</strong>
+                <small>Pendentes</small>
+            </div>
+
+            <div class="resumo-item">
+                <span>✨</span>
+                <strong id="total-concluidas">0</strong>
+                <small>Concluídas</small>
+            </div>
+        </section>
+
+        <section class="cartao">
+            <h2>♡ Nova tarefa</h2>
+
+            <form id="form-tarefa">
+                <label for="nome-tarefa">O que você precisa fazer?</label>
+                <input
+                    type="text"
+                    id="nome-tarefa"
+                    placeholder="Ex.: estudar matemática..."
+                    maxlength="150"
+                    required
+                >
+
+                <div class="campos-data">
+                    <div>
+                        <label for="data-tarefa">Data</label>
+                        <input
+                            type="date"
+                            id="data-tarefa"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label for="hora-tarefa">Horário</label>
+                        <input
+                            type="time"
+                            id="hora-tarefa"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <button type="submit" class="botao-adicionar">
+                    + Adicionar tarefa
+                </button>
+            </form>
+        </section>
+
+        <section class="cartao">
+            <div class="titulo-lista">
+                <h2>♡ Minha listinha</h2>
+
+                <button
+                    type="button"
+                    id="botao-notificacoes"
+                    class="botao-notificacoes"
+                >
+                    🔔 Ativar notificações
+                </button>
+            </div>
+
+            <div class="filtros">
+                <button type="button" class="filtro ativo" data-filtro="todas">
+                    Todas
+                </button>
+
+                <button type="button" class="filtro" data-filtro="pendentes">
+                    Pendentes
+                </button>
+
+                <button type="button" class="filtro" data-filtro="concluidas">
+                    Concluídas
+                </button>
+            </div>
+
+            <p id="mensagem-vazia" class="mensagem-vazia">
+                Sua listinha está vazia por enquanto. ♡
+            </p>
+
+            <ul id="lista-tarefas" class="lista-tarefas"></ul>
+        </section>
+
+        <div id="aviso" class="aviso" role="status" aria-live="polite"></div>
+
+        <footer>
+            feito com carinho ♡ um dia de cada vez
+        </footer>
+    </main>
+    <div id="aviso" class="aviso" role="status" aria-live="polite"></div>
+    
+<div id="videoplayback.mp3" class="caixa-alarme" role="alertdialog"
+aria-labelledby="titulo-alarme" aria-modal="true" hidden>
+
+<span class="icone-alarme">🔔</span>
+
+<h2 id="titulo-alarme">Hora da sua tarefa! ♡</h2>
+
+<p id="mensagem-alarme">
+   Você tem uma tarefa esperando por você!
+</p>
+
+<button type="button" id="desligar-alarme">
+   ♡ Desligar alarme
+</button>
+</div>
+
+</body>
+</html>

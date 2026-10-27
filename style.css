@@ -1,0 +1,442 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --rosa: #e8a0bc;
+    --rosa-escuro: #b85f86;
+    --rosa-claro: #fff0f6;
+    --lilas: #eee8ff;
+    --branco: #ffffff;
+    --texto: #705363;
+    --texto-claro: #a58a9a;
+    --verde: #b7d9c4;
+    --sombra: 0 8px 25px rgba(171, 111, 145, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 35px 16px;
+    background: linear-gradient(
+        135deg,
+        #fff0f6,
+        #f7f0ff,
+        #fff8f1
+    );
+    color: var(--texto);
+    font-family: 'Nunito', sans-serif;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #d99aba;
+    outline-offset: 3px;
+}
+
+.organizador {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.cabecalho {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.decoracao {
+    color: var(--rosa-escuro);
+    font-size: 36px;
+}
+
+.subtitulo {
+    margin: 4px 0;
+    color: var(--texto-claro);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+h1 {
+    margin: 8px 0;
+    color: var(--rosa-escuro);
+    font-size: clamp(30px, 7vw, 43px);
+}
+
+.descricao {
+    margin: 0;
+    color: var(--texto-claro);
+}
+
+.resumo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.resumo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 18px 8px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #f4deea;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+}
+
+.resumo-item span {
+    font-size: 23px;
+}
+
+.resumo-item strong {
+    font-size: 25px;
+    color: var(--rosa-escuro);
+}
+
+.resumo-item small {
+    color: var(--texto-claro);
+}
+
+.cartao {
+    margin-bottom: 20px;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid #f5dfeb;
+    border-radius: 24px;
+    box-shadow: var(--sombra);
+}
+
+h2 {
+    margin: 0 0 20px;
+    font-size: 21px;
+    color: var(--rosa-escuro);
+}
+
+form label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+input {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    color: var(--texto);
+    background: #fffafd;
+    border: 1px solid #ead6e3;
+    border-radius: 12px;
+}
+
+input:focus {
+    border-color: var(--rosa);
+}
+
+#nome-tarefa {
+    margin-bottom: 18px;
+}
+
+.campos-data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.botao-adicionar {
+    width: 100%;
+    margin-top: 20px;
+    padding: 13px;
+    color: white;
+    background: linear-gradient(100deg, #e7a0bd, #c99ee9);
+    border: none;
+    border-radius: 14px;
+    font-weight: 800;
+}
+
+.botao-adicionar:hover {
+    box-shadow: 0 5px 15px #e8c4d9;
+}
+
+.titulo-lista {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.titulo-lista h2 {
+    margin: 0;
+}
+
+.botao-notificacoes {
+    padding: 8px 11px;
+    background: var(--lilas);
+    color: #80669d;
+    border: none;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.filtro {
+    padding: 8px 13px;
+    color: var(--texto-claro);
+    background: #fff7fb;
+    border: 1px solid #f0dce7;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.filtro.ativo {
+    color: white;
+    background: var(--rosa);
+    border-color: var(--rosa);
+}
+
+.lista-tarefas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.tarefa {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px;
+    background: #fff8fc;
+    border: 1px solid #f2dfeb;
+    border-radius: 16px;
+    overflow-wrap: anywhere;
+}
+
+.tarefa.concluida {
+    background: #f4fbf6;
+    border-color: #d7eadc;
+}
+
+.check-tarefa {
+    width: 19px;
+    height: 19px;
+    margin-top: 3px;
+    flex-shrink: 0;
+    accent-color: var(--rosa-escuro);
+    cursor: pointer;
+}
+
+.conteudo-tarefa {
+    flex: 1;
+    min-width: 0;
+}
+
+.nome-tarefa {
+    margin: 0 0 6px;
+    font-size: 15px;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+.concluida .nome-tarefa {
+    color: #8baa94;
+    text-decoration: line-through;
+}
+
+.horario-tarefa {
+    margin: 0;
+    color: var(--texto-claro);
+    font-size: 12px;
+}
+
+.etiqueta {
+    display: inline-block;
+    margin-top: 7px;
+    padding: 3px 8px;
+    background: var(--lilas);
+    color: #80669d;
+    border-radius: 8px;
+    font-size: 11px;
+}
+
+.botao-excluir {
+    flex-shrink: 0;
+    padding: 7px 9px;
+    color: #bd6686;
+    background: #ffe8ef;
+    border: none;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.mensagem-vazia {
+    padding: 18px 0;
+    color: var(--texto-claro);
+    text-align: center;
+    font-size: 14px;
+}
+
+.aviso {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 10;
+    width: min(360px, calc(100% - 40px));
+    padding: 17px 20px;
+    color: #81506a;
+    background: #fff;
+    border: 2px solid #f0c4d9;
+    border-radius: 17px;
+    box-shadow: 0 8px 30px #b987a433;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: 0.25s ease;
+    pointer-events: none;
+}
+
+.aviso.visivel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+footer {
+    padding: 10px;
+    color: var(--texto-claro);
+    text-align: center;
+    font-size: 12px;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 22px 12px;
+    }
+
+    .cartao {
+        padding: 17px;
+    }
+
+    .resumo {
+        gap: 7px;
+    }
+
+    .resumo-item {
+        padding: 13px 4px;
+    }
+
+    .titulo-lista {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .campos-data {
+        gap: 9px;
+    }
+
+    .tarefa {
+        padding: 12px 9px;
+        gap: 8px;
+    }
+}
+
+
+.caixa-alarme {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+
+    width: min(360px, calc(100% - 32px));
+    padding: 30px 24px;
+
+    background: linear-gradient(145deg, #fff5fa, #f4edff);
+    border: 2px solid #e8a0bc;
+    border-radius: 25px;
+
+    box-shadow: 0 12px 45px rgba(120, 75, 110, 0.25);
+    text-align: center;
+}
+
+.caixa-alarme[hidden] {
+    display: none;
+}
+
+.icone-alarme {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 48px;
+    animation: balancar 0.7s infinite alternate;
+}
+
+.caixa-alarme h2 {
+    margin-bottom: 12px;
+}
+
+.caixa-alarme p {
+    overflow-wrap: anywhere;
+    line-height: 1.6;
+}
+
+#desligar-alarme {
+    width: 100%;
+    margin-top: 15px;
+    padding: 13px;
+
+    color: white;
+    background: linear-gradient(100deg, #e7a0bd, #c99ee9);
+    border: none;
+    border-radius: 14px;
+
+    font-weight: 800;
+    font-size: 15px;
+}
+
+#desligar-alarme:hover {
+    box-shadow: 0 5px 15px #e8c4d9;
+}
+
+@keyframes balancar {
+    from {
+        transform: rotate(-12deg);
+    }
+
+    to {
+        transform: rotate(12deg);
+    }
+}
